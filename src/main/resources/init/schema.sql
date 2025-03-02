@@ -1,0 +1,12 @@
+-- 상품 테이블 스키마
+CREATE TABLE IF NOT EXISTS goods (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    is_del BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_by VARCHAR(255),
+    modified_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    modified_by VARCHAR(255),
+    category VARCHAR(255),
+    brand VARCHAR(255),
+    price BIGINT
+);

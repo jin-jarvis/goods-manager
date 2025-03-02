@@ -1,0 +1,43 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: goods-manager
+  # R2DBC
+  r2dbc:
+    # memory 방식
+    url: r2dbc:h2:mem:///m_project
+    # file 방식
+#    url: r2dbc:h2:file:///./m_project
+    username: sa
+    password:
+  # JPA
+#  datasource:
+#    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:mem:m_project
+#    username: sa
+#    password:
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+
+h2:
+  console:
+    port: 8082
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    groups-order: DESC
+    tagsSorter : alpha
+    operationsSorter : alpha
+
+logging:
+  level:
+    io.r2dbc.h2.QUERY: DEBUG
+    org.springframework.r2dbc.core: DEBUG
